@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsx and babel</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const app = () => {
+            const showAlert = () => {
+                alert('Hello');                
+            };
+
+
+            const divStyles = {
+          border: '2px solid black',
+          padding: '10px',
+          marginTop: '20px',
+          textAlign: 'center',
+          backgroundColor: '#f0f0f0'
+        };
+
+        return (
+          <React.Fragment>
+            {/* Paragraph Element */}
+            <p>React is a javascript library</p>
+
+            {/* Div Element with Class main */}
+            <div className="main" style={divStyles}>
+              <p>Click the below button to alert 'Hello'</p>
+              <button onClick={showAlert}>Alert Hello</button>
+            </div>
+          </React.Fragment>
+        );
+      };
+
+      // Render the App component
+      ReactDOM.render(<App />, document.getElementById('root'));
+        
+
+
+    </script>
+</body>
+</html>
